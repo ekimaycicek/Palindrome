@@ -14,12 +14,12 @@ public class Palindrome {
         System.out.print("String bir ifade giriniz : ");
         String ifade = scan.nextLine();
 
-        palindomeWithStringBuilder(ifade);
-        palindromeWithForLoop(ifade);
+       palindomeWithStringBuilder(ifade);
+       palindromeWithForLoop(ifade);
 
     }
 
-    private static void palindromeWithForLoop(String str) {
+     private static void palindromeWithForLoop(String str) {
         String tersStr = "";
         for (int i = str.length()-1; i >=0 ; i--) {
             tersStr += str.charAt(i);
@@ -30,10 +30,12 @@ public class Palindrome {
         }else System.out.print("girilen ifade palindrom degildir ->" +tersStr);
     }
 
-    private static void palindomeWithStringBuilder(String str) {
-        StringBuilder sb = new StringBuilder(str);
+
+    private static void palindomeWithStringBuilder(String ss) {
+
+        StringBuilder sb = new StringBuilder(ss);
         String tersStr = sb.reverse().toString();
-        if(tersStr.equalsIgnoreCase(str)){
+        if(tersStr.equalsIgnoreCase(ss)){
             System.out.println("girilen ifade palindomdur -> " + tersStr);
         }else System.out.println("girilen ifade palindrom degildir ->" +tersStr);
     }

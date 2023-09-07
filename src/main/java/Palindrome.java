@@ -11,33 +11,33 @@ public class Palindrome {
         */
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        System.out.print("String bir ifade giriniz : ");
-        String ifade = scan.nextLine();
+        System.out.print("String enter an expression : ");
+        String expression = scan.nextLine();
 
-       palindomeWithStringBuilder(ifade);
-       palindromeWithForLoop(ifade);
+       palindomeWithStringBuilder(expression);
+       palindromeWithForLoop(expression);
 
     }
 
      private static void palindromeWithForLoop(String str) {
-        String tersStr = "";
+        String reverseExpression = "";
         for (int i = str.length()-1; i >=0 ; i--) {
-            tersStr += str.charAt(i);
+            reverseExpression += str.charAt(i);
         }
-        System.out.println("tersStr = " + tersStr);
-        if(tersStr.equalsIgnoreCase(str)){
-            System.out.print("girilen ifade palindomdur -> " + tersStr);
-        }else System.out.print("girilen ifade palindrom degildir ->" +tersStr);
+        System.out.println("reverse expression = " + reverseExpression);
+        if(reverseExpression.equalsIgnoreCase(str)){
+            System.out.print("the entered expression is palindom -> " + reverseExpression);
+        }else System.out.print("the entered expression is not a palindrome ->" +reverseExpression);
     }
 
 
     private static void palindomeWithStringBuilder(String ss) {
 
         StringBuilder sb = new StringBuilder(ss);
-        String tersStr = sb.reverse().toString();
-        if(tersStr.equalsIgnoreCase(ss)){
-            System.out.println("girilen ifade palindomdur -> " + tersStr);
-        }else System.out.println("girilen ifade palindrom degildir ->" +tersStr);
+        String reverseExpression = sb.reverse().toString();
+        if(reverseExpression.equalsIgnoreCase(ss)){
+            System.out.println("the entered expression is palindom -> " + reverseExpression);
+        }else System.out.println("the entered expression is not a palindrome ->" + reverseExpression);
     }
 
 }
